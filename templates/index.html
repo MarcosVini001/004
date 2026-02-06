@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartas Digitais</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Corações flutuando -->
+  <div class="heart" style="left:10%;">❤️</div>
+  <div class="heart" style="left:30%; animation-delay:2s;">💖</div>
+  <div class="heart" style="left:50%; animation-delay:4s;">💕</div>
+  <div class="heart" style="left:70%; animation-delay:6s;">💓</div>
+  <div class="heart" style="left:90%; animation-delay:8s;">💘</div>
+
+  <h1>💌 Cartas para Você</h1>
+
+  <div class="envelope" onclick="showMessage(1)">📨</div>
+  <div id="msg1" class="message">Eai gatinha, fiz essa arte para te falar que acho voce incrívelmente linda!</div>
+
+  <div class="envelope" onclick="showMessage(2)">📨</div>
+  <div id="msg2" class="message"> Como dizia o pixote  " É o brilho do seu olhar que meleva a loucura", gata demais ta maluco💕</div>
+
+  <div class="envelope" onclick="showMessage(3)">📨</div>
+  <div id="msg3" class="message">
+    Fiz para voce de presente, eu sou meio nerd entao é oq sei fazer😂. E fé nos emocionados 😂
+    <br><a href="/sorpresa" style="display:none;" id="linkSecreto">✨ Clique aqui para uma surpresa ✨</a>
+  </div>
+
+  <script>
+    function showMessage(num) {
+      const msg = document.getElementById("msg" + num);
+      msg.style.display = (msg.style.display === "block") ? "none" : "block";
+      if(num === 3){
+        document.getElementById("linkSecreto").style.display = "inline";
+      }
+    }
+  </script>
+</body>
+</html>
